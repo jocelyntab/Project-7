@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+    />
+    <link rel="stylesheet" href="css/toggle.css" />
+  </head>
+
+  <body class="grid-container">
+    <header class="header">
+      <h1 class="header-name">Dashboard</h1>
+      <!-- Bell -->
+      <div class="header-nav">
+        <div class="bell-notifications-wrapper">
+          <div class="nav-bell"></div>
+          <div id="notifications">
+            <p><h3>Notifications</h3></p>
+            <div class="notice">
+              There are 4 new members <i class="notice-close">x</i>
+            </div>
+
+            <div class="notice">
+              There are new widgets <i class="notice-close">x</i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image -->
+        <div>
+          <img src="images/member-1.jpg" alt="Maria Jones" />
+        </div>
+        <h3>Maria Jones</h3>
+      </div>
+    </header>
+    <!-- Side navigation -->
+    <nav class="navigation">
+      <!-- Dashboard -->
+      <div>
+        <a href="#"><img src="icons/icon-dashboard.svg" /></a>
+      </div>
+      <!-- Members -->
+      <div>
+        <a href="#"><img src="icons/icon-members.svg" /></a>
+      </div>
+      <!-- Visits -->
+      <div>
+        <a href="#"><img src="icons/icon-visits.svg" /></a>
+      </div>
+      <!-- Settings -->
+      <div>
+        <a href="#"><img src="icons/icon-settings.svg" /></a>
+      </div>
+    </nav>
+    <main class="main">
+      <div class="main-header">
+        <h2>Dashboard</h2>
+        <div class="main-header-search">
+          <input type="search" placeholder="Search..." />
+        </div>
+      </div>
+      <!-- Alert banner -->
+      <div class="alert" id="alert"></div>
+      <!--Line Graph Chart-->
+      <section class="traffic">
+        <div class="traffic-header">
+          <h3>Traffic</h3>
+          <ul class="traffic-nav">
+            <li class="traffic-nav-link">Hourly</li>
+            <li class="traffic-nav-link">Daily</li>
+            <li class="traffic-nav-link active">Weekly</li>
+            <li class="traffic-nav-link">Monthly</li>
+          </ul>
+        </div>
+        <div class="widget-container-full">
+          <canvas id="traffic-chart"></canvas>
+        </div>
+      </section>
+      <!--Bar Graph-->
+      <section class="daily">
+        <h3>Daily Traffic</h3>
+        <div class="widget-container-half">
+          <canvas id="daily-chart"></canvas>
+        </div>
+      </section>
+      <!--Donut Graph-->
+      <section class="mobile">
+        <h3>Mobile Users</h3>
+        <div class="widget-container-half">
+          <canvas id="mobile-users"></canvas>
+        </div>
+      </section>
+      <!--Social Section-->
+      <h3 class="social-name">Social Stats</h3>
+      <section class="social">
+        <div class="social-container">
+          <div class="social-image"><img src="icons/icon-twitter.svg" /></div>
+          <div class="social-text">
+            <p>Twitter</p>
+            <p>10,345</p>
+          </div>
+        </div>
+        <div class="social-container">
+          <div class="social-image">
+            <img src="icons/icon-facebook.svg" />
+          </div>
+          <div class="social-text">
+            <p>Facebook</p>
+            <p>8,739</p>
+          </div>
+        </div>
+        <div class="social-container">
+          <div class="social-image">
+            <img src="icons/icon-google-plus.svg" />
+          </div>
+          <div class="social-text">
+            <p>Google</p>
+            <p>2,530</p>
+          </div>
+        </div>
+      </section>
+      <!--New Members-->
+      <section class="members">
+        <h3>New Members</h3>
+        <div class="members-container">
+          <div class="member-image-and-info-wrapper">
+            <img src="images/member-1.jpg" class="profile-image" />
+            <div class="members-text">
+              <p>Victoria Chambers</p>
+              <a href="#">victoria.chambers80@example.com</a>
+            </div>
+          </div>
+          <p>10/15/15</p>
+        </div>
+        <div class="members-container">
+          <div class="member-image-and-info-wrapper">
+            <img src="images/member-2.jpg" class="profile-image" />
+            <div class="members-text">
+              <p>Dale Byrd</p>
+              <a href="#">dale.byrd52@example.com</a>
+            </div>
+          </div>
+          <p>10/15/15</p>
+        </div>
+        <div class="members-container">
+          <div class="member-image-and-info-wrapper">
+            <img src="images/member-3.jpg" class="profile-image" />
+            <div class="members-text">
+              <p>Dawn Wood</p>
+              <a href="#">dawn.wood16@example.com</a>
+            </div>
+          </div>
+          <p>10/15/15</p>
+        </div>
+        <div class="members-container">
+          <div class="member-image-and-info-wrapper">
+            <img src="images/member-4.jpg" class="profile-image" />
+            <div class="members-text">
+              <p>Dan Oliver</p>
+              <a href="#">dan.oliver82@example.com</a>
+            </div>
+          </div>
+          <p>10/15/15</p>
+        </div>
+      </section>
+      <!--Recent Activity-->
+      <section class="activity">
+        <h3>Recent Activity</h3>
+        <div class="activity-container">
+          <img src="images/member-1.jpg" class="profile-image" />
+          <div class="activity-text">
+            <p>Victoria Chambers commented on Dashboard's SEO tips</p>
+            <p>4 hours ago</p>
+          </div>
+        </div>
+        <div class="activity-container">
+          <img src="images/member-2.jpg" class="profile-image" />
+          <div class="activity-text">
+            <p>Dale Byrd liked the post Facebook's Changes for 2016</p>
+            <p>5 hours ago</p>
+          </div>
+        </div>
+        <div class="activity-container">
+          <img src="images/member-3.jpg" class="profile-image" />
+          <div class="activity-text">
+            <p>Dawn Wood commented on Facebook's Changes for 2016</p>
+            <p>5 hours ago</p>
+          </div>
+        </div>
+        <div class="activity-container">
+          <img src="images/member-4.jpg" class="profile-image" />
+          <div class="activity-text">
+            <p>Dan Oliver posted Dashboard SEO Tips</p>
+            <p>1 day ago</p>
+          </div>
+        </div>
+      </section>
+      <!--Messaging Widget-->
+      <section class="message">
+        <h3>Message User</h3>
+        <form class="widget-container">
+          <input
+            type="text"
+            placeholder="Search for user"
+            class="form-field"
+            id="userField"
+          />
+          <textarea
+            placeholder="Message for user"
+            class="form-area"
+            id="messageField"
+          ></textarea>
+          <button class="button-primary" id="send">Send</button>
+        </form>
+      </section>
+      <!--Settings-->
+      <section>
+        <h3>Settings</h3>
+        <label class="switch-ios switch-light" onclick="">
+          <input type="checkbox" />
+
+          <strong>
+            Send Email Notification
+          </strong>
+
+          <span>
+            <span>Off</span>
+            <span>On</span>
+            <a></a>
+          </span>
+        </label>
+        <label class="switch-ios switch-light" onclick="">
+          <input type="checkbox" />
+
+          <strong>
+            Set Profile to Public
+          </strong>
+
+          <span>
+            <span>Off</span>
+            <span>On</span>
+            <a></a>
+          </span>
+        </label>
+        <select class="form-field" id="timezone">
+          <option disabled selected>Select a Timezone</option>
+          <option>Eastern</option>
+          <option>Pacific</option>
+        </select>
+        <div class="settings-button">
+          <button class="button-primary" id="save">Save</button>
+          <button class="button-disabled" id="cancel">Cancel</button>
+        </div>
+      </section>
+    </main>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.0-alpha/Chart.min.js"
+      integrity="sha512-sySOoQplygWETKm3HoW/V2tMWbW+5YN72uVutG7os+o3dAxJcJZZWb6S4doE6BTi/SOPkTlo/Y630jp58lNRsA=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

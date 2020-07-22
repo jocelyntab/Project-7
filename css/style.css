@@ -1,0 +1,301 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+  display: block;
+  text-align: center;
+}
+
+/* Header  */
+
+.header,
+.header-nav {
+  width: 100%;
+  background-color: #b734eb;
+  color: white;
+  display: flex;
+  padding: 0 20px;
+}
+
+.header-nav {
+  justify-content: flex-end;
+  padding-top: 20px;
+}
+
+#notifications {
+  display: none;
+}
+
+#notifications.show {
+  display: block;
+}
+
+.header-nav div img,
+.members-container img,
+.activity-container img {
+  height: 50px;
+  border-radius: 50%;
+}
+
+.notice {
+  padding: 10px;
+}
+
+/* Header Notification */
+
+.bell-notifications-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 0 0;
+}
+
+.bell-notifications-wrapper .nav-bell {
+  width: 30px;
+  background-image: url(../icons/icon-bell.svg);
+  background-size: cover;
+  height: 30px;
+  margin: 0 auto;
+}
+
+/* Navigation */
+
+.navigation {
+  background-color: #6d188f;
+  display: flex;
+}
+
+.navigation img {
+  width: 20%;
+  margin: 5px;
+  padding-top: 5px;
+}
+
+/* Alert Banner */
+
+.alert-banner {
+  display: flex;
+  justify-content: space-between;
+  background-color: #b734eb;
+  color: white;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+.alert-banner p {
+  padding-left: 20px;
+}
+
+.alert-banner-close {
+  padding-right: 20px;
+}
+
+/* Main */
+
+/* Main Header */
+
+.main-header,
+.main-header-search {
+  display: flex;
+}
+
+.main-header {
+  padding-left: 20px;
+}
+
+.main-header-search {
+  padding: 20px;
+  width: 100%;
+  justify-content: flex-end;
+  margin-left: 10px;
+  background-color: #f5f5f5;
+  border-left: black solid 1px;
+  border-bottom: black solid 1px;
+}
+
+.main-header-search input {
+  width: 30%;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+}
+
+ul li {
+  padding: 0 20px;
+}
+
+.widget-container-full,
+.widget-container-half {
+  width: 95vw;
+}
+
+.widget-container-full {
+  padding: 20px;
+  border-bottom: black solid 1px;
+}
+
+.widget-container-half {
+  padding-left: 10px;
+}
+
+/* Social */
+
+.social-name {
+  text-align: left;
+  padding: 10px;
+  border-top: black solid 1px;
+}
+
+.social {
+  border-bottom: black solid 1px;
+  padding-bottom: 20px;
+}
+
+.social-container {
+  background-color: aliceblue;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+/* New Members */
+
+.members,
+.activity {
+  border-bottom: black solid 1px;
+  padding-left: 20px;
+}
+
+.members-container,
+.activity-container {
+  display: flex;
+  padding: 20px;
+  font-size: 14px;
+}
+
+.members-container:not(:last-child),
+.activity-container:not(:last-child) {
+  border-bottom: black solid 1px;
+}
+
+.members h3,
+.activity h3 {
+  text-align: left;
+  padding: 10px;
+}
+
+.members-container {
+  justify-content: space-between;
+}
+
+.member-image-and-info-wrapper {
+  display: flex;
+  text-align: left;
+}
+.member-image-and-info-wrapper img {
+  margin: 15px 15px 0 0;
+}
+
+.members-text {
+  text-align: left;
+}
+
+.members-text p {
+  margin-bottom: 5px;
+}
+
+.members-text a {
+  text-decoration: none;
+  color: black;
+}
+
+.members-text a:hover {
+  color: #dda0dd;
+}
+
+.activity-text {
+  text-align: left;
+  padding: 15px;
+}
+
+.activity-text p {
+  margin: 0;
+}
+
+/* Social */
+.social-image {
+  width: 10%;
+}
+
+/* Settings */
+
+.form-field {
+  width: 80%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  margin: 10px;
+}
+
+.form-area {
+  width: 80%;
+  height: 100px;
+  resize: none;
+  border-radius: 4px;
+}
+
+.form-area::placeholder {
+  color: lightgrey;
+  opacity: 2;
+}
+
+.button-primary,
+.button-disabled {
+  width: 30%;
+  padding: 10px;
+  margin: 10px;
+}
+
+button:hover {
+  background-color: #4b0082;
+  color: white;
+  border-radius: 4px;
+  border: none;
+}
+
+/* Grid  */
+.grid-container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header"
+    "navigation"
+    "main";
+}
+
+.main {
+  display: grid;
+}
+
+/* Grid Area properties  */
+.header {
+  grid-area: header;
+}
+
+.navigation {
+  grid-area: navigation;
+}
+
+.main {
+  grid-area: main;
+}

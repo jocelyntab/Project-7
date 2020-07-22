@@ -1,0 +1,82 @@
+/* Media Queries */
+
+@media (min-width: 768px) {
+  /* Grid layout */
+  .grid-container {
+    grid-template-columns: 55px 1fr;
+    grid-template-areas:
+      "header header"
+      "navigation main";
+  }
+
+  .main {
+    grid-template-columns: 50%;
+  }
+
+  .main-header,
+  .traffic,
+  .alert,
+  .social,
+  .social-name {
+    grid-column: 1 / span 2;
+  }
+
+  .daily,
+  .members,
+  .message {
+    grid-column: 1 / span 1;
+  }
+
+  .mobile,
+  .activity,
+  .settings {
+    grid-column: 2 / span 1;
+  }
+
+  /* Navigation sidebar */
+
+  .navigation {
+    display: block;
+  }
+
+  .navigation img {
+    width: 60%;
+  }
+
+  /* Traffic  */
+
+  .traffic-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .traffic-header h3 {
+    padding-left: 20px;
+    margin: 0;
+    height: 20px;
+  }
+
+  .widget-container-half {
+    width: 45vw;
+  }
+
+  /* Social */
+
+  .social {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .social-container {
+    width: 30%;
+    display: inline-flex;
+  }
+
+  /* Members */
+
+  .members-container,
+  .activity-container {
+    width: 80%;
+  }
+}
