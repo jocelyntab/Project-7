@@ -144,12 +144,18 @@ ul li {
   padding-left: 10px;
 }
 
+.daily,
+.mobile {
+  padding-bottom: 20px;
+}
+
 /* Social */
 
 .social-name {
   text-align: left;
   padding: 10px;
   border-top: black solid 1px;
+  margin: 0;
 }
 
 .social {
@@ -298,4 +304,23 @@ button:hover {
 
 .main {
   grid-area: main;
+}
+
+.traffic-nav {
+  padding: 0;
+  margin: 20px;
+}
+
+.traffic-nav-link {
+  cursor: pointer;
+  transition: all 0.5s;
+  border-radius: 8px;
+  padding: 3px 5px;
+  margin-right: 5px;
+}
+
+.traffic-nav-link:hover,
+.traffic-nav-link.active {
+  background-color: #b734eb;
+  color: white;
 }

@@ -1,4 +1,4 @@
-// Alert Banner
+//************************ Alert Banner ***************************//
 const alertBanner = document.getElementById("alert");
 alertBanner.innerHTML = `
 <div class="alert-banner">
@@ -14,7 +14,7 @@ alertBanner.addEventListener("click", (e) => {
   }
 });
 
-// Notification
+//**********************  Notification ******************************//
 const notices = document.getElementsByClassName("notice");
 const notificationBell = document.getElementsByClassName("nav-bell")[0];
 
@@ -31,11 +31,112 @@ for (let i = 0, length = notices.length; i < length; i++) {
   });
 }
 
-//Chart Widgets
+//********************** Chart Widgets ***************************//
 
-//Line Graph
+/************************ Line Graph ****************************/
 
 // Weekly
+const weeklydata = [
+  750,
+  1250,
+  1000,
+  2000,
+  1500,
+  1750,
+  1250,
+  1850,
+  2250,
+  1500,
+  2500,
+];
+
+const weeklyLabel = [
+  "16-22",
+  "23-29",
+  "30-5",
+  "6-12",
+  "13-19",
+  "20-26",
+  "27-3",
+  "4-10",
+  "11-7",
+  "18-24",
+  "25-31",
+];
+
+// Hourly
+const hourData = [
+  700,
+  150,
+  1020,
+  3400,
+  250,
+  1550,
+  780,
+  790,
+  950,
+  400,
+  350,
+  250,
+];
+
+const hourLabel = [
+  "0-1",
+  "2-3",
+  "4-5",
+  "6-7",
+  "8-9",
+  "10-11",
+  "12-13",
+  "14-15",
+  "16-17",
+  "18-19",
+  "20-21",
+  "22-24",
+];
+
+// Daily
+const dayData = [1000, 2000, 2500, 3000, 1700, 2250, 3400];
+const dayLabel = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
+// Monthly
+const monthData = [
+  4000,
+  4700,
+  6000,
+  5000,
+  2000,
+  4500,
+  3000,
+  1540,
+  6000,
+  1200,
+  3000,
+  2000,
+];
+const monthLabel = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
 const trafficCanvas = document.getElementById("traffic-chart");
 let trafficData = {
   labels: [
@@ -85,13 +186,7 @@ let trafficChart = new Chart(trafficCanvas, {
   options: trafficData,
 });
 
-// Hourly
-
-// Daily
-
-// Monthly
-
-//Bar Graph
+/********************** Bar Graph ****************************/
 const dailyCanvas = document.getElementById("daily-chart");
 
 const dailyData = {
@@ -127,7 +222,7 @@ let dailyChart = new Chart(dailyCanvas, {
   options: dailyOptions,
 });
 
-//Doughnut Chart
+/************************* Doughnut Chart ***************************/
 const mobileCanvas = document.getElementById("mobile-users");
 
 const mobileData = {
@@ -158,7 +253,7 @@ let mobileChart = new Chart(mobileCanvas, {
   options: mobileOptions,
 });
 
-//Messaging Section
+/*************************** Messaging Section ***************************/
 const user = document.getElementById("userField");
 const message = document.getElementById("messageField");
 const send = document.getElementById("send");
@@ -174,3 +269,45 @@ send.addEventListener("click", () => {
     alert(`Message successfully sent to: ${user.value}`);
   }
 });
+
+/**************** Buttons to change data on line graph **********************/
+function setTrafficChartTriggers() {
+  const btns = document.getElementsByClassName("traffic-nav-link");
+
+  for (let i = 0, length = btns.length; i < length; i++) {
+    btns[i].addEventListener("click", () => {
+      console.log("firing");
+      const active = document.getElementsByClassName("active")[0];
+      const label = btns[i].innerText.toLowerCase();
+      active.classList.toggle("active");
+      btns[i].classList += " active";
+
+      const datasets = trafficChart.data.datasets[0];
+
+      switch (label) {
+        case "hourly":
+          datasets.data = hourData;
+          trafficChart.data.labels = hourLabel;
+          break;
+        case "weekly":
+          datasets.data = weeklydata;
+          trafficChart.data.labels = weeklyLabel;
+          break;
+        case "monthly":
+          datasets.data = monthData;
+          trafficChart.data.labels = monthLabel;
+          break;
+        case "daily":
+          datasets.data = dayData;
+          trafficChart.data.labels = dayLabel;
+          break;
+      }
+
+      trafficChart.update();
+    });
+  }
+}
+
+setTrafficChartTriggers();
+
+/******************* Search **********************/

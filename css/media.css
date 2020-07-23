@@ -60,6 +60,10 @@
     width: 45vw;
   }
 
+  .mobile {
+    border-left: black solid 1px;
+  }
+
   /* Social */
 
   .social {
@@ -78,5 +82,9 @@
   .members-container,
   .activity-container {
     width: 80%;
+  }
+
+  .activity {
+    border-left: black solid 1px;
   }
 }
