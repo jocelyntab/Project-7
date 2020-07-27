@@ -203,7 +203,7 @@
       <!--Messaging Widget-->
       <section class="message">
         <h3>Message User</h3>
-        <form class="widget-container">
+        <form class="widget-container" autocomplete="off">
           <input
             type="text"
             placeholder="Search for user"
@@ -212,7 +212,7 @@
           />
           <textarea
             placeholder="Message for user"
-            class="form-area"
+            class="form-area autosave"
             id="messageField"
           ></textarea>
           <button class="button-primary" id="send">Send</button>
@@ -221,21 +221,23 @@
       <!--Settings-->
       <section>
         <h3>Settings</h3>
-        <label class="switch-ios switch-light" onclick="">
-          <input type="checkbox" />
+        <div class="form-group">
+          <label class="switch-ios switch-light" onclick="">
+            <input type="checkbox" id="email" class="autosave"/>
 
-          <strong>
-            Send Email Notification
-          </strong>
+            <strong>
+              Send Email Notification
+            </strong>
 
-          <span>
-            <span>Off</span>
-            <span>On</span>
-            <a></a>
-          </span>
-        </label>
+            <span>
+              <span>Off</span>
+              <span>On</span>
+              <a></a>
+            </span>
+          </label>
+      </div>
         <label class="switch-ios switch-light" onclick="">
-          <input type="checkbox" />
+          <input type="checkbox" id="profile" class="autosave"/>
 
           <strong>
             Set Profile to Public
@@ -247,7 +249,7 @@
             <a></a>
           </span>
         </label>
-        <select class="form-field" id="timezone">
+        <select class="form-field" id="timezone" class="autosave">
           <option disabled selected>Select a Timezone</option>
           <option>Eastern</option>
           <option>Pacific</option>

@@ -1,4 +1,20 @@
+//**************************** Toggles ******************************//
+
+const email = document.getElementById("email"),
+  profile = document.getElementById("profile"),
+  timezone = document.getElementById("timezone");
+
+const lsEmail = localStorage.getItem("email"),
+  lsProfile = localStorage.getItem("profile"),
+  lsTimezone = localStorage.getItem("timezone");
+
+lsEmail === "on" ? (email.checked = true) : (email.checked = false);
+lsProfile === "on" ? (profile.checked = true) : (profile.checked = false);
+
+if (lsTimezone) timezone.value = lsTimezone;
+
 //************************ Alert Banner ***************************//
+
 const alertBanner = document.getElementById("alert");
 alertBanner.innerHTML = `
 <div class="alert-banner">
@@ -310,4 +326,25 @@ function setTrafficChartTriggers() {
 
 setTrafficChartTriggers();
 
-/******************* Search **********************/
+/******************* Search ***********************/
+
+/******************* Storage **********************/
+
+document.getElementById("save").addEventListener("click", () => {
+  email.checked
+    ? localStorage.setItem("email", "on")
+    : localStorage.setItem("email", "off");
+  profile.checked
+    ? localStorage.setItem("profile", "on")
+    : localStorage.setItem("profile", "off");
+
+  const timeZoneSelected = timezone.value;
+  localStorage.setItem("timezone", timeZoneSelected);
+  debugger;
+});
+
+document.getElementById("cancel").addEventListener("click", () => {
+  localStorage.removeItem("email");
+  localStorage.removeItem("profile");
+  localStorage.removeItem("timezone");
+});
