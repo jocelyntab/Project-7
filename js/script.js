@@ -340,6 +340,8 @@ document.getElementById("save").addEventListener("click", () => {
 
   const timeZoneSelected = timezone.value;
   localStorage.setItem("timezone", timeZoneSelected);
+
+  alert("Changes Saved!");
   debugger;
 });
 
@@ -347,4 +349,49 @@ document.getElementById("cancel").addEventListener("click", () => {
   localStorage.removeItem("email");
   localStorage.removeItem("profile");
   localStorage.removeItem("timezone");
+
+  alert("Changes Cancelled!");
 });
+
+/******************* Search Autocomplete **********************/
+
+function searchAutoComplete() {
+  const autoCompleteWrapper = document.getElementById("autocomplete");
+  const searchInput = document.getElementById("userField");
+
+  document.addEventListener("click", (e) => {
+    autoCompleteWrapper.innerHTML = "";
+  });
+
+  searchInput.addEventListener("keyup", (e) => {
+    e.preventDefault();
+    const inputText = e.target.value.toLowerCase();
+    const members = document.getElementsByClassName("member-name");
+    const searchResults = [];
+
+    autoCompleteWrapper.innerHTML = "";
+
+    if (inputText !== "") {
+      for (let i = 0, length = members.length; i < length; i++) {
+        const memberName = members[i].innerText;
+
+        // first, check if the text that the user inputted matches
+        // the current member we are looking at. e.g: if the user
+        // pressed "d", then look to see if "d" is in the member's
+        // name
+        if (memberName.toLowerCase().includes(inputText)) {
+          searchResults.push(memberName);
+        }
+      }
+
+      for (let j = 0, length = searchResults.length; j < length; j++) {
+        const resultDiv = document.createElement("div");
+        resultDiv.classList = "member-search-result";
+        resultDiv.innerHTML = `<p>${searchResults[j]}</p>`;
+        autoCompleteWrapper.appendChild(resultDiv);
+      }
+    }
+  });
+}
+
+searchAutoComplete();

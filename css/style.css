@@ -61,6 +61,11 @@ body {
   margin: 0 auto;
 }
 
+.nav-bell:hover {
+  transform: rotate(45deg);
+  transition: transform 0.3s ease-out;
+}
+
 /* Navigation */
 
 .navigation {
@@ -133,6 +138,7 @@ ul li {
 .widget-container-full,
 .widget-container-half {
   width: 95vw;
+  margin: 0 auto;
 }
 
 .widget-container-full {
@@ -323,4 +329,29 @@ button:hover {
 .traffic-nav-link.active {
   background-color: #b734eb;
   color: white;
+}
+
+#autocomplete {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 80%;
+  background-color: #ededed;
+}
+
+#autocomplete .member-search-result {
+  border-bottom: 1px solid #e4e4e4;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+}
+
+#autocomplete .member-search-result:hover {
+  background-color: #e4e4e4;
+  color: #fff;
+}
+
+#autocomplete .member-search-result:last-child {
+  border-bottom: none;
 }

@@ -131,7 +131,7 @@
           <div class="member-image-and-info-wrapper">
             <img src="images/member-1.jpg" class="profile-image" />
             <div class="members-text">
-              <p>Victoria Chambers</p>
+              <p class="member-name">Victoria Chambers</p>
               <a href="#">victoria.chambers80@example.com</a>
             </div>
           </div>
@@ -141,7 +141,7 @@
           <div class="member-image-and-info-wrapper">
             <img src="images/member-2.jpg" class="profile-image" />
             <div class="members-text">
-              <p>Dale Byrd</p>
+              <p class="member-name">Dale Byrd</p>
               <a href="#">dale.byrd52@example.com</a>
             </div>
           </div>
@@ -151,7 +151,7 @@
           <div class="member-image-and-info-wrapper">
             <img src="images/member-3.jpg" class="profile-image" />
             <div class="members-text">
-              <p>Dawn Wood</p>
+              <p class="member-name">Dawn Wood</p>
               <a href="#">dawn.wood16@example.com</a>
             </div>
           </div>
@@ -161,7 +161,7 @@
           <div class="member-image-and-info-wrapper">
             <img src="images/member-4.jpg" class="profile-image" />
             <div class="members-text">
-              <p>Dan Oliver</p>
+              <p class="member-name">Dan Oliver</p>
               <a href="#">dan.oliver82@example.com</a>
             </div>
           </div>
@@ -204,12 +204,15 @@
       <section class="message">
         <h3>Message User</h3>
         <form class="widget-container" autocomplete="off">
-          <input
-            type="text"
-            placeholder="Search for user"
-            class="form-field"
-            id="userField"
-          />
+          <div class="search-group">
+            <input
+              type="text"
+              placeholder="Search for user"
+              class="form-field"
+              id="userField"
+            />
+            <div id="autocomplete"></div>
+          </div>
           <textarea
             placeholder="Message for user"
             class="form-area autosave"
