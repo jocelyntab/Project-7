@@ -61,6 +61,24 @@ body {
   margin: 0 auto;
 }
 
+.badge {
+  position: relative;
+  top: -20px;
+  right: 3px;
+  line-height: 16px;
+  height: 16px;
+  padding: 0 5px;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.25);
+  border: 1px solid;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3),
+    0 1px 1px rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.3),
+    0 1px 1px rgba(0, 0, 0, 0.08);
+}
+
 .nav-bell:hover {
   transform: rotate(45deg);
   transition: transform 0.3s ease-out;
